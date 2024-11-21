@@ -14,3 +14,5 @@ def about(request, name, age):
 def contact(request):
     return HttpResponse('<h2>Контакты</h2>')
 
+def user(request, name='Undefined', age=0):
+    return HttpResponse(f'<h2>Имя: {name}, Возраст: {age}</h2>')
