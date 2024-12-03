@@ -2,17 +2,13 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def index(request):
-    return HttpResponse('<h2>Главная</h2>')
+    return HttpResponse('<h1>Главная страница</h1>')
 
-def about(request, name, age):
-    return HttpResponse(f'''
-                    <h2>О пользователе</h2>
-                    <p>Имя: {name}</p>
-                    <p>Возраст: {age}</p>
-''')
+def products(requests, id):
+    return HttpResponse(f'<h1>Список товаров {id}</h1>')
 
-def contact(request):
-    return HttpResponse('<h2>Контакты</h2>')
+def new(request, id):
+    return HttpResponse(f'<h1>Новые товары {id}</h1>')
 
-def user(request, name='Undefined', age=0):
-    return HttpResponse(f'<h2>Имя: {name}, Возраст: {age}</h2>')
+def top(request, id):
+    return HttpResponse(f'<h1 class=text-center text-uppercase color:red mb-3>Наиболее популярные товары {id}</h1>')
