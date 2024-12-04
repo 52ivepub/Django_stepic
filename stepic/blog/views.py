@@ -1,14 +1,19 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseNotFound, HttpResponseForbidden, HttpResponseBadRequest
 
-def index(request):
-    return HttpResponse('<h1>Главная страница</h1>')
+def index(request, id):
+    people = [None, "Bob", "Sam", "Tom"]
+    if id in range(1, len(people)):
+        return HttpResponse(people[id])
+    else:
+        return HttpResponseNotFound("Not Found")
 
-def products(requests, id):
-    return HttpResponse(f'<h1>Список товаров {id}</h1>')
+def access(request, age):
+    if age not in range(1, 111):
+        return HttpResponseBadRequest("Некорректные данные")
+    if (age>17):
+        return HttpResponse("Доступ разрешен")
+    else:
+        return HttpResponseForbidden("Доступ заблокирован: недостаточно лет")
 
-def new(request, id):
-    return HttpResponse(f'<h1>Новые товары {id}</h1>')
 
-def top(request, id):
-    return HttpResponse(f'<h1 class=text-center text-uppercase color:red mb-3>Наиболее популярные товары {id}</h1>')
