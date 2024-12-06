@@ -1,0 +1,20 @@
+.tit {
+   font-size: 20px; 
+   padding: auto;
+   margin: 0;
+   background: #8d3030;
+   color: aquamarine;
+   border-radius: 3px;
+   border: #8d3030;
+
+}
+
+h1 {
+    font-size: 20px; 
+    padding: auto;
+    margin: 0;
+    background: #8d3030;
+    color: aquamarine;
+    border-radius: 3px;
+    border: #8d3030;  
+}
