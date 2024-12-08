@@ -1,6 +1,10 @@
 from django.shortcuts import render
- 
+
 
 def index(request):
-    return render(request, "blog/index.html", context = {"body": "<h1>Hello World!</h1>"})
+    return render(request, "blog/index.html", context={"site": "Stepik.org"})
+
+
+def about(request):
+    return render(request, "blog/about.html", context={"site": "Stepik"})
 
